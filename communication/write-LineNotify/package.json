@@ -1,0 +1,15 @@
+{
+  "name": "write-linenotify",
+  "version": "1.0.0",
+  "description": "sent data to line api using access token",
+  "main": "core.js",
+  "scripts": {
+    "start": "node core.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JamesBond",
+  "license": "ISC",
+  "dependencies": {
+    "line-notify-nodejs": "^1.0.1"
+  }
+}

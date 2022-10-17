@@ -1,4 +1,5 @@
-const token = `G0Qzy8XnQT05ViKSAdVzGqvSA4su5DaUllKu8XCGRBt`
+require('dotenv').config();
+const token = process.env.TOKEN_API_LINE
 const lineNotify = require(`line-notify-nodejs`)(token)
 
 let data = `Hello from nodejs`

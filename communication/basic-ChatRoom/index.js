@@ -1,3 +1,6 @@
+require('dotenv').config();
+const lineNotify = require('./lineNotify')
+
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -11,15 +14,16 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    lineNotify(`somebody connected`)
     socket.on('disconnect', () => {
-        console.log('user disconnected');
+        console.log('somebody disconected')
     });
 });
 
 io.on('connection', (socket) => {
     socket.on('chat message', (message) => {
         io.emit('chat message', message);
+        lineNotify(`somebody text : ${message}`)
     });
 });
   
